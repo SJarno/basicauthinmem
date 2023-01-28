@@ -22,7 +22,7 @@ Currently unable to resolve situation with Cors configuration. But then again on
 In memory users put to place, and working. Just added an extra bean for userdetails with defaultPasswordEncoder.
 Did note that the very first time after initial building the browser authentication popped up. But did started to work after this. Wondering if this would be an issue in production.
 
-The application itself is very simple, I might add some added complexity.
+The application itself is very simple, with some added complexity with different role types.
 
 ## Authentication
 Basic auth - username and password.
