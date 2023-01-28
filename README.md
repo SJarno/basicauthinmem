@@ -1,4 +1,6 @@
 # Basic Auth with Spring Boot and Angular
+[![Build and Test Spring Boot Project](https://github.com/SJarno/basicauthinmem/actions/workflows/gradle.yml/badge.svg)](https://github.com/SJarno/basicauthinmem/actions/workflows/gradle.yml)
+
 Basic auth with Spring Boot, Spring Security 6 and in-mem users
 
 ## About
