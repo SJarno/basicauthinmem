@@ -19,10 +19,13 @@ After this, from the root of the project run ".\gradlew bootRun"
 Currently unable to resolve situation with Cors configuration. But then again one can always use ng build --watch for local development.
 
 ## Status
-comming up 
+In memory users put to place, and working. Just added an extra bean for userdetails with defaultPasswordEncoder.
+Did note that the very first time after initial building the browser authentication popped up. But did started to work after this. Wondering if this would be an issue in production.
+
+The application itself is very simple, I might add some added complexity.
 
 ## Authentication
-
+Basic auth - username and password.
 
 ## Next steps
-
+Persisting user info in h2-database, custom userdetails.
