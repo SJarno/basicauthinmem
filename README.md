@@ -1,5 +1,5 @@
 # Basic Auth with Spring Boot and Angular
-Basic auth with Spring Security and Angular part 664
+Basic auth with Spring Boot, Spring Security 6 and in-mem users
 
 ## About
 Some testing and practice for future reference. Main goal is to update Spring Security from 5.8 to 6.x.
@@ -19,10 +19,10 @@ After this, from the root of the project run ".\gradlew bootRun"
 Currently unable to resolve situation with Cors configuration. But then again one can always use ng build --watch for local development.
 
 ## Status
-Spring Boot 3.x and Spring Security 6.x now in place. 
+comming up 
 
 ## Authentication
-Currently just with Basic auth, and with one pre-defined user
+
 
 ## Next steps
-Use in memory user, next repo!
+
