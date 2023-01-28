@@ -2,12 +2,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { AuthResponse } from './models/AuthResponse';
+import { AuthResponse } from '../models/AuthResponse';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AppService {
+export class AuthService {
 
   user?: AuthResponse;
   authenticated: boolean = false;
@@ -24,16 +24,14 @@ export class AppService {
     return this.http.get<AuthResponse>(`${this.url}user`, { headers: headers }).pipe(
       tap(response => {
         console.log('The authresponse == ', response);
+        this.user = response;
+        console.log('after assign', this.user);
       }),
       map((response: AuthResponse) => {
         return response;
       }),
       catchError(this.handleError<any>('Error in auth!')));
   }
-  /* isInStorage() {
-    const user = sessionStorage.getItem('user');
-    return user ? true : false;
-  } */
   logout(): boolean {
     this.http.post(`${this.url}logout`, {}).pipe(
       tap(logoutResult => {

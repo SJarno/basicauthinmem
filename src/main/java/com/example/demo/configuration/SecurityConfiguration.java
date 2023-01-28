@@ -44,12 +44,18 @@ public class SecurityConfiguration {
                                 .password("pass")
                                 .roles("USER")
                                 .build();
+                UserDetails superUser = users
+                                .username("super")
+                                .password("superpass")
+                                .roles("USER", "SUPERUSER")
+                                .build();
                 UserDetails admin = users
                                 .username("admin")
                                 .password("adminpass")
-                                .roles("ADMIN")
+                                .roles("ADMIN", "USER", "SUPERUSER")
                                 .build();
-                return new InMemoryUserDetailsManager(user, admin);
+
+                return new InMemoryUserDetailsManager(user, admin, superUser);
         }
 
         @Bean
@@ -60,9 +66,11 @@ public class SecurityConfiguration {
                 requestHandler.setCsrfRequestAttributeName(null);
                 // requestHandler.setCsrfRequestAttributeName("_csrf");//possible break here
                 http
-                                
-                                /* .and()
-                                .cors(cors -> cors.disable()) */
+
+                                /*
+                                 * .and()
+                                 * .cors(cors -> cors.disable())
+                                 */
                                 // Session management
                                 .sessionManagement((sessions) -> sessions
                                                 // this is breaking the session if set to true
